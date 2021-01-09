@@ -1,9 +1,10 @@
 module.exports = {
+  pathPrefix: "/portfolio",
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Stuart Ingersoll-Smith`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Stuart Ingersoll-Smith`,
+      summary: `Full-Stack Developer working in London. I develop web / apps and specialise in both front-end and backend development`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
