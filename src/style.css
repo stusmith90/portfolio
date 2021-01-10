@@ -141,9 +141,9 @@ h6 {
   font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
 }
+a { color: inherit; } 
 
 h1 {
-  font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
   color: var(--color-heading-black);
 }
@@ -254,9 +254,6 @@ table thead tr th {
 
 /* Link */
 
-a {
-  color: var(--color-primary);
-}
 
 a:hover,
 a:focus {
