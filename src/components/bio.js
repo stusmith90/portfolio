@@ -65,15 +65,23 @@ const Bio = () => {
       </div>
       <div class="social-media-icons">
         <span>
-          <FaLinkedin size="2em" />
+          <a
+            href="https://www.linkedin.com/in/stuart-smith-b435127b/"
+            target="_blank"
+          >
+            <FaLinkedin size="2em" />
+          </a>
+        </span>
+        <span>
+          <a href="https://twitter.com/Stuart90Smith" target="_blank">
+            <FaTwitterSquare size="2em" />
+          </a>
         </span>
         <span>
           {" "}
-          <FaTwitterSquare size="2em" />
-        </span>
-        <span>
-          {" "}
-          <GoMarkGithub size="2em" />
+          <a href="https://github.com/stusmith90" target="_blank">
+            <GoMarkGithub size="2em" />
+          </a>
         </span>
       </div>
     </>
