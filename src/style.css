@@ -54,7 +54,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #007CC7;
+  --color-primary: #4DA8DA;
   --color-text: #EEFBFB;
   --color-text-light: #4f5969;
   --color-heading: #EEFBFB;
@@ -270,6 +270,15 @@ a:focus {
 color: red;
 }
 
+.social-media-icons{
+  padding-left:4rem;
+  margin-bottom: var(--spacing-20);
+}
+
+.social-media-icons span{
+  padding:0.2rem;
+}
+
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
@@ -277,7 +286,7 @@ color: red;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
+  margin-bottom: var(--spacing-2);
 }
 
 .global-header {
