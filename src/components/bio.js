@@ -8,6 +8,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { FaLinkedin, FaTwitterSquare } from "react-icons/fa"
+import { GoMarkGithub } from "react-icons/go"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -40,24 +42,41 @@ const Bio = () => {
   const avatar = data?.avatar?.childImageSharp?.fixed
 
   return (
-    <div className="bio">
-      {avatar && (
-        <Image
-          fixed={avatar}
-          alt={author?.name || ``}
-          className="bio-avatar"
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-      )}
-      {author?.name && (
-        <p>
-          I'm a {author?.summary || null}
-          {` `}
-        </p>
-      )}
-    </div>
+    <>
+      <div className="bio">
+        {avatar && (
+          <Image
+            fixed={avatar}
+            alt={author?.name || ``}
+            className="bio-avatar"
+            imgStyle={{
+              borderRadius: `50%`,
+            }}
+          />
+        )}
+        {author?.name && (
+          <>
+            <p>
+              I'm a {author?.summary || null}
+              {` `}
+            </p>
+          </>
+        )}
+      </div>
+      <div class="social-media-icons">
+        <span>
+          <FaLinkedin size="2em" />
+        </span>
+        <span>
+          {" "}
+          <FaTwitterSquare size="2em" />
+        </span>
+        <span>
+          {" "}
+          <GoMarkGithub size="2em" />
+        </span>
+      </div>
+    </>
   )
 }
 

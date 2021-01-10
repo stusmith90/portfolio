@@ -4,7 +4,7 @@ module.exports = {
     title: `Stuart Ingersoll-Smith`,
     author: {
       name: `Stuart Ingersoll-Smith`,
-      summary: `Full-Stack Developer working in London. I develop web / apps and specialise in both front-end and backend development`,
+      summary: `Full-Stack Developer working in London. I develop web / apps and specialise in both front-end and backend development. My two favourite programming lanuages are JavaScript and PHP`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
