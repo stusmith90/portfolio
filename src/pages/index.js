@@ -12,7 +12,7 @@ const timeLineData = {
   "timelineCards": [{
           "startDate": "Sep 2018",
           "endDate": "Present",
-          "title": "Full Stack Developer (Front-End) - Cherry Advertising",
+          "title": "Full Stack Developer - Cherry Advertising",
           "location": "London",
           "description": "Working as a Full Stack Front-End developer for an agency. I joined an agency because I enjoy building products from scratch and working through the start of a project to the finish.",
           "techlist": ["REACT", "JAVASCRIPT", "HTML", "CSS", "DRUPAL 8"]
