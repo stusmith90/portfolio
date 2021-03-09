@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, graphql } from "gatsby"
 
 import './Intro.scss';
 
@@ -12,6 +13,9 @@ const intro = () => (
         <li className="Intro__list-item">Other Skills: HTML Grid, flexbox, SASS, GIT, OO PHP, Photoshop</li>
         <li className="Intro__list-item">Dev ops - Docker, Vagrant, SOLR, AWS, Nginx and Bitbucket Pipelines</li>
       </ul>
+      <div className="Intro__link">
+        <Link to="/blog">blog</Link>
+        </div>
     </div>
 );
 
