@@ -2,12 +2,10 @@ import React from 'react';
 
 import TimelineCard from "../../containers/TimelineCard/TimelineCard";
 
-import "./Timeline.scss";
-
 const Timeline  = (props) => {
   const timelineCardData = props.timelineCardData;
   return(
-  <div className="Timeline">
+  <div className="RightSection">
     {timelineCardData.map((card) => (
      <TimelineCard 
                      logoImage={card.logoImage}
