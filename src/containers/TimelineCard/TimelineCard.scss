@@ -126,7 +126,7 @@
   .TimelineCard__joiner {
     width: 7px;
     height: 100px;
-    background-color: steelblue;
+    background-color: var(--color-primary);
     margin: -15px auto 0;
     opacity: 0;
     transition: all 1s;
