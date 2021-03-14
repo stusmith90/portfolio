@@ -4,27 +4,30 @@ import Layout from "../layout"
 import SEO from "../seo"
 
 const BlogItems = ({ data }) => {
-  const [tagData, setTagData] = useState(null);
-  const [showTags, setShowTags] = useState([]);
-  const tags = ["All", "JS", "PHP", "REACT"]
-  const posts = data.allMarkdownRemark.nodes
-  useEffect(() => {
-    const postArray = [];
-    setShowTags(posts);
-    posts.forEach(post => {
-      const tagsPosts = post.frontmatter.tags;
-      if(tagsPosts.includes(tagData)){
-        postArray.push(post);
-      }
-    });
-    if(postArray.length){
-    setShowTags(postArray);
-    }
-  },[tagData]);
 
-  const tagClick = (e) => {
-      const val = e.currentTarget.dataset.id;
-      setTagData(val);
+  const [tagData, setTagData] = useState(null)
+  const [showTags, setShowTags] = useState([])
+  const tags = ["All", "JS", "PHP", "REACT"]
+  const posts = data
+
+  useEffect(() => {
+    const postArray = []
+    setShowTags(posts)
+    console.log(showTags);
+    posts.forEach(post => {
+      const tagsPosts = post.frontmatter.tags
+      if (tagsPosts.includes(tagData)) {
+        postArray.push(post)
+      }
+    })
+    if (postArray.length) {
+      setShowTags(postArray)
+    }
+  }, [posts, tagData])
+
+  const tagClick = e => {
+    const val = e.currentTarget.dataset.id
+    setTagData(val)
   }
 
   if (showTags.length === 0) {
@@ -44,7 +47,9 @@ const BlogItems = ({ data }) => {
       <ol style={{ listStyle: `none` }}>
         <div className="tags">
           {tags.map(tag => (
-            <li data-id={tag} onClick={tagClick}>{tag}</li>
+            <li data-id={tag} onClick={tagClick}>
+              {tag}
+            </li>
           ))}
         </div>
         {showTags.map(post => {

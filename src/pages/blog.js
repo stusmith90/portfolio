@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,19 @@ import BlogItems from "../components/blogItems/BlogItems"
 
 const Blog = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const posts = data.allMarkdownRemark.nodes
+
+  const [dataBlog, setDataBlog] = useState(posts);
+
+  const blogChange = e => {
+    const targetVal = e.target.value
+    const filterPost = posts.filter(post => {
+      return post.frontmatter.title
+        .toLowerCase()
+        .includes(targetVal.toLowerCase())
+    })
+    setDataBlog(filterPost);
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -16,13 +29,13 @@ const Blog = ({ data, location }) => {
         <div className="Sidebar__container">
           <h1>Blog</h1>
           <p>Documenting new skills and findings.</p>
-          <input type="text" placeholder="Search" ></input>
+          <input type="text" placeholder="Search" onChange={blogChange}></input>
           <div className="nav">
             <Link to="/">Home</Link>
           </div>
         </div>
         <div className="RightSection">
-          <BlogItems data={data} />
+          <BlogItems data={dataBlog} />
         </div>
       </div>
     </Layout>
