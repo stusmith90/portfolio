@@ -13,7 +13,6 @@ const BlogItems = ({ data }) => {
   useEffect(() => {
     const postArray = []
     setShowTags(posts)
-    console.log(showTags);
     posts.forEach(post => {
       const tagsPosts = post.frontmatter.tags
       if (tagsPosts.includes(tagData)) {
@@ -24,11 +23,6 @@ const BlogItems = ({ data }) => {
       setShowTags(postArray)
     }
   }, [posts, tagData])
-
-  const tagClick = e => {
-    const val = e.currentTarget.dataset.id
-    setTagData(val)
-  }
 
   if (showTags.length === 0) {
     return (
@@ -47,7 +41,7 @@ const BlogItems = ({ data }) => {
       <ol style={{ listStyle: `none` }}>
         <div className="tags">
           {tags.map(tag => (
-            <li data-id={tag} onClick={tagClick}>
+            <li data-id={tag} onClick={(e) => setTagData(e.currentTarget.dataset.id)}>
               {tag}
             </li>
           ))}

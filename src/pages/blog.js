@@ -27,12 +27,15 @@ const Blog = ({ data, location }) => {
       <SEO title="All posts" />
       <div className="App">
         <div className="Sidebar__container">
+        <div className="nav">
+          <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+          </div>
+          <div class="TopContent">
           <h1>Blog</h1>
           <p>Documenting new skills and findings.</p>
           <input type="text" placeholder="Search" onChange={blogChange}></input>
-          <div className="nav">
-            <Link to="/">Home</Link>
-          </div>
+        </div>
         </div>
         <div className="RightSection">
           <BlogItems data={dataBlog} />
