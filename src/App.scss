@@ -58,10 +58,11 @@
   a {
     text-decoration: none;
     color: white;
-  }
+    padding: 3px;
 
-  &:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -143,16 +144,10 @@ a:focus {
   padding: var(--spacing-4) var(--spacing-3);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
-  color: var(--color-text);
-  background: rgba(18, 35, 46, 1);
-  animation-name: sideAn;
-  animation-duration: 4s;
-  animation-delay: 2s;
 
-  background: linear-gradient(-45deg, #007CC7, #12232E, #203647, #12232E);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-
+  h1, h2, h3, h4{
+    color:var(--color-primary)
+  }
 
 }
 
@@ -183,5 +178,54 @@ a:focus {
   ul,
   ol {
     list-style-position: inside;
+  }
+}
+
+.TopContent {
+  padding: 40px 5px 10px;
+
+  @media (min-width: 1300px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 90px 50px 10px 0px;
+  }
+  date, tags{
+    color: var(--color-text);
+    font-size:1.3em;
+    margin-top:var(--spacing-1);
+  }
+}
+
+.TopContent__avatar{
+display: flex;
+
+}
+
+.TopContent__title {
+  font-size: 3rem;
+  line-height: 2.5rem;
+
+  @media (min-width: 1300px) {
+    font-size: 2rem;
+    line-height: inherit;
+  }
+}
+
+.TopContent__list {
+  margin-top: 40px;
+
+  @media (min-width: 1300px) {
+    margin-top: 11px;
+    float: right;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 6px 20px;
+    font-size: 1rem;
+    border: 1px solid #003c50;
+    margin: 7px;
+    color: #003c50;
   }
 }

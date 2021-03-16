@@ -3,11 +3,13 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BlogInItems from "../components/blogInItems/BlogInItems";
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  console.log(post)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -15,48 +17,20 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer></footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <div className="App">
+        <div className="Sidebar__container">
+          <div className="nav">
+            <Link to="/">Home</Link>
+            <Link to="/blog">Blog</Link>
+          </div>
+          <div className="TopContent">
+          <h1>{post.frontmatter.title}</h1>
+          <date>Date Posted: {post.frontmatter.date}</date>
+          <tags>Tags: {[...post.frontmatter.tags].join(",")}</tags>
+          </div>
+        </div>
+        <BlogInItems post={post} previous={previous} next={next}/>
+      </div>
     </Layout>
   )
 }
@@ -82,6 +56,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
