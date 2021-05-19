@@ -27,7 +27,7 @@ const Index = ({ data, location }) => {
         <div className="Sidebar__container">
         <div className="nav">
             <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
+            {/* <Link to="/blog">Blog</Link> */}
           </div>
           <Menu />
           <Intro />
